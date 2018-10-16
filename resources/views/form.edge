@@ -1,0 +1,28 @@
+@layout('master')
+@section('content_form')
+<form action="{{'/adonisuser'}}" method="post" class="pt-5">
+    {{csrfField()}}
+    <button type="submit" class="btn btn-sm btn-success">Simpan</button>
+    <div class="form-group row">
+        <label for="nama_lengkap" class="col-sm-3 col-form-label">Nama Lengkap</label>
+        <div class="col-sm-5">
+            <input type="text" name="nama_lengkap" class="form-control" id="nama_lengkap" />
+        </div>
+    </div>
+    <fieldset class="form-group">
+    <div class="row">
+        <legend class="col-form-label col-sm-3 pt-0">Jenis Kelamin</legend>
+        <div class="col-sm-5">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Pria" />
+                <label class="form-check-label" for="gridRadios1">Pria</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Wanita" />
+                <label class="form-check-label" for="gridRadios1">Wanita</label>
+            </div>
+        </div>
+    </div>
+    </fieldset>
+</form>
+@endsection

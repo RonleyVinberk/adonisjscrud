@@ -1,0 +1,41 @@
+@layout('master')
+@section('content')
+<form action="{{'/adonisuser/' +user.id+ '?_method=PATCH'}}" method="post" class="pt-5">
+    <button type="submit" class="btn btn-sm btn-success">Ganti</button>
+    <input type="hidden" name="id" value="{{user.id}}" />
+    <div class="form-group row">
+        <label for="nama_lengkap" class="col-sm-3 col-form-label">Nama Lengkap</label>
+        <div class="col-sm-5">
+            <input type="text" name="nama_lengkap" class="form-control" id="nama_lengkap" value="{{user.nama_lengkap}}" />
+        </div>
+    </div>
+    <fieldset class="form-group">
+    <div class="row">
+        <legend class="col-form-label col-sm-3 pt-0">Jenis Kelamin</legend>
+        @if(user.jenis_kelamin == "Pria")
+            <div class="col-sm-5">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="{{user.jenis_kelamin}}" checked />
+                    <label class="form-check-label" for="gridRadios1">{{user.jenis_kelamin}}</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Wanita" />
+                    <label class="form-check-label" for="gridRadios1">Wanita</label>
+                </div>
+            </div>
+        @elseif(user.jenis_kelamin == "Wanita")
+            <div class="col-sm-5">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Pria" />
+                    <label class="form-check-label" for="gridRadios1">Pria</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="{{user.jenis_kelamin}}" checked />
+                    <label class="form-check-label" for="gridRadios1">{{user.jenis_kelamin}}</label>
+                </div>
+            </div>
+        @endif
+    </div>
+    </fieldset>
+</form>
+@endsection

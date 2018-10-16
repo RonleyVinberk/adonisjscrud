@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="author" content="Ronley Tsutomu Minoru Vinberk" />
+
+      <title>Adonisjs CRUD</title>
+
+      {{-- Bootstrap --}}
+      {{css('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')}}
+
+      {{-- Datatables --}}
+      {{css('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css')}}
+      {{css('https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css')}}
+  </head>
+  <body>
+      {{-- start body --}}
+
+      <div class="container">
+          {{-- start container --}}
+
+          <div class="row">
+              {{-- start row --}}
+
+              <div class="col-sm-12 col-md-6 offset-md-4">
+                  {{-- start col --}}
+
+                  @!section('content_form')
+
+                  {{-- end col --}}
+              </div>
+              <div class="col-sm-12 col-md-10 offset-md-1">
+                  {{-- start col --}}
+
+                  @!section('content')
+
+                  <div align="center"><small>&copy; 2018 Adonisjs CRUD | Created by Ronley Tsutomu Minoru Vinberk | Framework by Adonisjs</small></div>
+
+                  {{-- end col --}}
+              </div>
+
+              {{-- end row --}}
+          </div>
+
+          {{-- end container --}}
+      </div>
+
+      {{script('https://code.jquery.com/jquery-1.12.4.js')}}
+      {{script('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js')}}
+      {{script('https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js')}}
+      {{script('custom')}}
+
+      {{-- end body --}}
+  </body>
+</html>
